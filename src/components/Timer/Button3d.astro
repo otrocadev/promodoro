@@ -1,0 +1,45 @@
+---
+interface Props {
+  icon: string;
+}
+
+const { icon } = Astro.props;
+---
+
+<button class="back-button">
+  <span class="front">
+    <svg width="44" height="44" viewBox="0 0 24 24">
+      <path d={icon} fill="currentColor"> </path>
+    </svg>
+  </span>
+</button>
+
+<style>
+  .back-button {
+    background: var(--button-elevation);
+    border-radius: 1rem;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 0.2rem;
+  }
+
+  .front {
+    display: block;
+    padding: 0.2rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    background: var(--button-backgound);
+    color: var(--font-secondary);
+    transform: translateY(-0.4rem);
+    border: 3px solid #415b4c;
+  }
+
+  .back-button:hover .front {
+    transform: translateY(-0.25rem);
+  }
+
+  .back-button:active .front {
+    transform: translateY(0rem);
+  }
+</style>

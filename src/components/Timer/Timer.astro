@@ -1,0 +1,68 @@
+---
+import icons from "../icons.js";
+
+import Button3d from "./Button3d.astro";
+
+function dothat() {
+  console.log("patata bullida per tu");
+}
+---
+
+<div class="container">
+  <div class="digits-display">
+    <p class="digit">00</p>
+    <p class="separator">:</p>
+    <p class="digit">00</p>
+  </div>
+  <div class="buttons">
+    <Button3d icon={icons.arrowUp} class:list={"patata"} />
+    <Button3d icon={icons.arrowDown} />
+  </div>
+</div>
+
+<style>
+  .container {
+    border: 3px solid var(--font-main);
+    border-radius: 1rem;
+    background-color: var(--dark-background);
+    box-shadow: inset 10px 10px 80px rgba(255, 255, 255, 0.1);
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .digits-display {
+    font-family: BigShoulders;
+    font-weight: 600;
+    font-size: 4rem;
+    display: flex;
+    height: 6rem;
+    padding: 1rem;
+  }
+
+  .digits-display p {
+    margin: 0;
+    padding: 0.6rem 0.8rem 0 0.8rem;
+  }
+
+  .digit {
+    border: 2px solid var(--font-main);
+    border-radius: 1rem;
+    background-color: var(--ice-background);
+  }
+
+  .separator {
+    color: var(--ice-background);
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .patata {
+    color: red;
+    width: 100000px;
+  }
+</style>
